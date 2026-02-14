@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aafiaaaaa ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial, sans-serif;
+overflow:hidden;
+color:white;
+background:linear-gradient(-45deg,#ff416c,#ff4b2b,#ff758c,#ff7eb3);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+background:rgba(0,0,0,0.35);
+padding:30px;
+border-radius:20px;
+text-align:center;
+max-width:90%;
+backdrop-filter:blur(10px);
+}
+
+h1{
+margin-bottom:15px;
+}
+
+#typed{
+font-size:1.15rem;
+min-height:120px;
+line-height:1.5;
+}
+
+button{
+padding:12px 22px;
+margin:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:1rem;
+transition:0.2s;
+}
+
+#yes{
+background:#00c853;
+color:white;
+}
+
+#no{
+background:#ff1744;
+color:white;
+}
+
+.result{
+margin-top:20px;
+font-size:1.2rem;
+display:none;
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+bottom:-10px;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Aafiaaaaa ❤️</h1>
+
+<div id="typed"></div>
+
+<div>
+<button id="yes" onclick="yesClicked()">YES 🙂</button>
+<button id="no">NO 🙃</button>
+</div>
+
+<div class="result" id="result">
+I knew it 😌❤️ Thank you Aafiaaaaa.
+</div>
+
+</div>
+
+<script>
+
+/* YOUR PERSONAL MESSAGE TYPING */
+
+const text = "I couldn't stop myself Aafiaaaaa 😅 .... Just wanted to make you feel a little special... Aafiaaaaa you are the most beautiful thing that ever happened in my life and I don't want to lose you ever. Bas ek chance yarr 😅 .... jyada to nai bolenge yaar, but I love you soo fucking much and always will no matter what ❤️❤️❤️";
+
+let i=0;
+
+function typeEffect(){
+if(i<text.length){
+document.getElementById("typed").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeEffect,30);
+}
+}
+
+typeEffect();
+
+/* YES button */
+
+function yesClicked(){
+document.getElementById("result").style.display="block";
+}
+
+/* NO button shrinking effect */
+
+let noBtn=document.getElementById("no");
+let scale=1;
+
+noBtn.addEventListener("click",function(){
+scale -= 0.15;
+if(scale<0.2){ scale=0.2; }
+noBtn.style.transform="scale("+scale+")";
+});
+
+/* floating hearts */
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},300);
+
+</script>
+
+</body>
+</html>
